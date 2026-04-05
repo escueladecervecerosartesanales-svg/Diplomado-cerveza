@@ -4,23 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Academia Cervecera | José Guerrero – Diplomado en Ciencia y Tecnología Cervecera</title>
-  <meta name="description" content="Domina la ciencia de la cerveza artesanal: química, microbiología y producción. Aprende con José Guerrero, químico y consultor cervecero. Más de 1500 alumnos. ¡Inscríbete!">
+  <meta name="description" content="Domina la ciencia de la cerveza artesanal: química, microbiología y producción. Aprende con José Guerrero. Más de 1500 alumnos. Certificación. ¡Inscríbete!">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { background: #FFFFFF; font-family: 'Inter', sans-serif; color: #1A1A1A; line-height: 1.6; scroll-behavior: smooth; }
+    body { background: #0A0A0A; font-family: 'Inter', sans-serif; color: #E8DFD3; line-height: 1.6; scroll-behavior: smooth; }
     .container { max-width: 1280px; margin: 0 auto; padding: 0 56px; }
     :root {
-      --gold: #C8A86B;
-      --gold-dark: #B28B4A;
-      --gold-light: #E8DCC4;
-      --dark-charcoal: #1E1B18;
-      --soft-gray: #F9F7F4;
-      --text-dark: #2A2520;
-      --text-medium: #5C5548;
-      --discount-red: #C75C3E;
-      --urgent-orange: #E67E22;
+      --gold: #D4A259;
+      --gold-dark: #B8860B;
+      --gold-light: #F0C674;
+      --dark-bg: #0A0A0A;
+      --card-bg: #141414;
+      --card-border: #2A2A2A;
+      --text-light: #E8DFD3;
+      --text-muted: #A89880;
+      --discount-red: #E67E22;
+      --urgent-orange: #F39C12;
     }
     .gold-text { color: var(--gold); }
     .text-center { text-align: center; }
@@ -30,7 +31,7 @@
       position: fixed;
       bottom: 20px;
       right: 20px;
-      background: linear-gradient(135deg, #1E1B18 0%, #2A2520 100%);
+      background: linear-gradient(135deg, #1A1A1A 0%, #0A0A0A 100%);
       backdrop-filter: blur(12px);
       border-radius: 60px;
       padding: 12px 24px;
@@ -38,21 +39,21 @@
       align-items: center;
       gap: 15px;
       border: 1px solid var(--urgent-orange);
-      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.4);
       z-index: 1000;
       font-family: 'Inter', sans-serif;
     }
     .floating-timer i { color: var(--urgent-orange); font-size: 1.2rem; }
-    .floating-timer .timer-text { font-size: 0.75rem; color: #E8DFD3; letter-spacing: 1px; }
+    .floating-timer .timer-text { font-size: 0.75rem; color: var(--text-muted); letter-spacing: 1px; }
     .floating-timer .timer-numbers { font-weight: 700; font-size: 1rem; color: var(--gold); background: rgba(0,0,0,0.5); padding: 4px 10px; border-radius: 40px; }
     @media (max-width: 768px) { .floating-timer { padding: 8px 16px; gap: 8px; } .floating-timer .timer-text { display: none; } }
     
-    /* Hero Banner - Cerveza Artesanal */
+    /* Hero Banner - Botella de Cerveza Artesanal */
     .hero-banner {
       position: relative;
       width: 100%;
       min-height: 620px;
-      background-image: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.45) 100%), url('https://images.pexels.com/photos/1267703/pexels-photo-1267703.jpeg?auto=compress&cs=tinysrgb&w=1600');
+      background-image: linear-gradient(135deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.6) 100%), url('https://images.pexels.com/photos/1267703/pexels-photo-1267703.jpeg?auto=compress&cs=tinysrgb&w=1600');
       background-size: cover;
       background-position: center 40%;
       display: flex;
@@ -60,7 +61,7 @@
     }
     .hero-banner-content { position: relative; z-index: 3; max-width: 720px; padding: 80px 56px; }
     .hero-badge-gold {
-      background: rgba(200, 168, 107, 0.2);
+      background: rgba(212, 162, 89, 0.15);
       backdrop-filter: blur(4px);
       display: inline-block;
       padding: 8px 20px;
@@ -69,7 +70,7 @@
       letter-spacing: 3px;
       color: var(--gold);
       font-weight: 500;
-      border: 0.5px solid rgba(200, 168, 107, 0.6);
+      border: 0.5px solid rgba(212, 162, 89, 0.4);
       margin-bottom: 1.8rem;
     }
     .hero-banner-content h1 {
@@ -79,17 +80,17 @@
       color: white;
       line-height: 1.15;
       margin-bottom: 1.2rem;
-      text-shadow: 0 2px 12px rgba(0,0,0,0.3);
+      text-shadow: 0 2px 12px rgba(0,0,0,0.5);
     }
     .hero-banner-content .subhead {
       font-size: 1.2rem;
-      color: rgba(255,255,245,0.92);
+      color: rgba(255,255,245,0.85);
       margin-bottom: 2rem;
       font-weight: 400;
       line-height: 1.6;
     }
     .price-card-hero {
-      background: rgba(30, 27, 24, 0.8);
+      background: rgba(20, 20, 20, 0.95);
       backdrop-filter: blur(12px);
       border-radius: 80px;
       display: inline-flex;
@@ -97,18 +98,18 @@
       align-items: center;
       gap: 24px;
       padding: 12px 32px 12px 36px;
-      border: 1px solid rgba(200, 168, 107, 0.5);
+      border: 1px solid rgba(212, 162, 89, 0.4);
       margin-top: 20px;
     }
-    .price-original { font-size: 1rem; text-decoration: line-through; color: #b0a088; margin-right: 8px; }
+    .price-original { font-size: 1rem; text-decoration: line-through; color: #A89880; margin-right: 8px; }
     .price-amount { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; font-weight: 700; color: var(--gold); }
     .btn-outline-light {
       background: var(--gold);
       border: none;
-      color: #1E1B18;
+      color: #0A0A0A;
       padding: 12px 32px;
       border-radius: 60px;
-      font-weight: 600;
+      font-weight: 700;
       transition: all 0.3s;
       text-decoration: none;
       display: inline-flex;
@@ -116,87 +117,88 @@
       gap: 10px;
       cursor: pointer;
     }
-    .btn-outline-light:hover { background: #DAB87A; transform: translateY(-2px); }
+    .btn-outline-light:hover { background: var(--gold-light); transform: translateY(-2px); }
 
     /* Timer Section */
-    .timer-section { background: linear-gradient(135deg, #1E1B18 0%, #2A2520 100%); padding: 40px 0; text-align: center; border-bottom: 3px solid var(--urgent-orange); }
+    .timer-section { background: linear-gradient(135deg, #0A0A0A 0%, #141414 100%); padding: 40px 0; text-align: center; border-bottom: 2px solid var(--urgent-orange); }
     .urgent-text { color: var(--urgent-orange); font-weight: 700; font-size: 1.2rem; margin-bottom: 15px; display: flex; align-items: center; justify-content: center; gap: 12px; }
     .countdown { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin: 20px 0 15px; }
-    .countdown-item { background: rgba(255,255,255,0.1); backdrop-filter: blur(8px); border-radius: 20px; padding: 15px 25px; min-width: 110px; text-align: center; border: 1px solid rgba(200,168,107,0.3); }
+    .countdown-item { background: rgba(255,255,255,0.05); backdrop-filter: blur(8px); border-radius: 20px; padding: 15px 25px; min-width: 110px; text-align: center; border: 1px solid rgba(212,162,89,0.2); }
     .countdown-number { font-family: 'Cormorant Garamond', serif; font-size: 3.2rem; font-weight: 700; color: var(--gold); line-height: 1; }
-    .countdown-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; color: rgba(255,255,245,0.7); margin-top: 5px; }
+    .countdown-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; color: var(--text-muted); margin-top: 5px; }
     .timer-expired { font-size: 1.3rem; font-weight: 700; color: var(--discount-red); background: rgba(0,0,0,0.5); padding: 20px; border-radius: 30px; display: inline-block; }
 
     /* Secciones */
-    .section { padding: 80px 0; background: white; }
-    .section-light { background: var(--soft-gray); padding: 80px 0; }
-    .section-title { font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 600; color: var(--dark-charcoal); margin-bottom: 0.75rem; text-align: center; }
-    .section-subtitle { color: var(--gold-dark); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 4px; font-weight: 500; margin-bottom: 1rem; text-align: center; }
+    .section { padding: 80px 0; background: var(--dark-bg); }
+    .section-light { background: #111111; padding: 80px 0; }
+    .section-title { font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 600; color: white; margin-bottom: 0.75rem; text-align: center; }
+    .section-subtitle { color: var(--gold); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 4px; font-weight: 500; margin-bottom: 1rem; text-align: center; }
     .divider-gold { width: 80px; height: 2px; background: var(--gold); margin: 20px auto 35px; }
 
     /* Author Card */
-    .author-card { background: white; padding: 32px 40px; border-radius: 32px; border: 1px solid rgba(200, 168, 107, 0.25); display: flex; flex-wrap: wrap; align-items: center; gap: 32px; box-shadow: 0 12px 30px -12px rgba(0,0,0,0.05); }
-    .author-photo { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 3px solid var(--gold); box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
-    .contact-card { background: white; border-radius: 32px; padding: 32px 28px; text-align: center; border: 1px solid rgba(200, 168, 107, 0.25); height: 100%; display: flex; flex-direction: column; justify-content: center; }
-    .btn-wa-gold { background: var(--gold); color: white !important; padding: 14px 32px; border-radius: 60px; display: inline-flex; align-items: center; gap: 12px; font-weight: 600; text-decoration: none; transition: all 0.2s; font-size: 1rem; }
-    .btn-wa-gold:hover { background: var(--gold-dark); transform: scale(1.02); }
+    .author-card { background: var(--card-bg); padding: 32px 40px; border-radius: 32px; border: 1px solid var(--card-border); display: flex; flex-wrap: wrap; align-items: center; gap: 32px; }
+    .author-photo { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 3px solid var(--gold); }
+    .contact-card { background: var(--card-bg); border-radius: 32px; padding: 32px 28px; text-align: center; border: 1px solid var(--card-border); height: 100%; display: flex; flex-direction: column; justify-content: center; }
+    .btn-wa-gold { background: var(--gold); color: #0A0A0A !important; padding: 14px 32px; border-radius: 60px; display: inline-flex; align-items: center; gap: 12px; font-weight: 700; text-decoration: none; transition: all 0.2s; font-size: 1rem; }
+    .btn-wa-gold:hover { background: var(--gold-light); transform: scale(1.02); }
 
     /* Benefits Grid */
     .benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin: 40px 0; }
-    .benefit-card { background: white; border-radius: 28px; padding: 36px 28px; text-align: center; transition: all 0.3s; border: 1px solid rgba(200, 168, 107, 0.2); box-shadow: 0 5px 15px rgba(0,0,0,0.02); }
-    .benefit-card:hover { transform: translateY(-8px); border-color: var(--gold); box-shadow: 0 25px 40px -15px rgba(0,0,0,0.1); }
+    .benefit-card { background: var(--card-bg); border-radius: 28px; padding: 36px 28px; text-align: center; transition: all 0.3s; border: 1px solid var(--card-border); }
+    .benefit-card:hover { transform: translateY(-8px); border-color: var(--gold); box-shadow: 0 25px 40px -15px rgba(0,0,0,0.3); }
     .benefit-icon { font-size: 2.8rem; color: var(--gold); margin-bottom: 20px; }
-    .benefit-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; margin-bottom: 12px; }
+    .benefit-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; margin-bottom: 12px; color: white; }
 
     /* Testimonios */
     .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin: 40px 0; }
-    .testimonial-card { background: white; border-radius: 28px; padding: 28px; border: 1px solid rgba(200,168,107,0.2); transition: all 0.3s; }
-    .testimonial-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px -10px rgba(0,0,0,0.08); }
+    .testimonial-card { background: var(--card-bg); border-radius: 28px; padding: 28px; border: 1px solid var(--card-border); transition: all 0.3s; }
+    .testimonial-card:hover { transform: translateY(-5px); border-color: var(--gold); }
     .testimonial-stars { color: var(--gold); margin-bottom: 15px; letter-spacing: 3px; }
-    .testimonial-text { font-style: italic; margin-bottom: 20px; color: var(--text-dark); }
+    .testimonial-text { font-style: italic; margin-bottom: 20px; color: var(--text-light); }
     .testimonial-author { display: flex; align-items: center; gap: 15px; }
-    .testimonial-avatar { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; background: var(--soft-gray); display: flex; align-items: center; justify-content: center; color: var(--gold); font-size: 1.5rem; border: 1px solid var(--gold-light); }
-    .testimonial-name { font-weight: 700; font-size: 0.9rem; }
-    .testimonial-title { font-size: 0.7rem; color: var(--text-medium); }
+    .testimonial-avatar { width: 50px; height: 50px; border-radius: 50%; background: #2A2A2A; display: flex; align-items: center; justify-content: center; color: var(--gold); font-size: 1.5rem; border: 1px solid var(--card-border); }
+    .testimonial-name { font-weight: 700; font-size: 0.9rem; color: white; }
+    .testimonial-title { font-size: 0.7rem; color: var(--text-muted); }
 
     /* Accordion */
     .accordion { margin-top: 30px; max-width: 1000px; margin-left: auto; margin-right: auto; }
-    .accordion-item { background: white; border-radius: 20px; margin-bottom: 16px; border: 1px solid rgba(200, 168, 107, 0.25); overflow: hidden; }
-    .accordion-header { background: white; padding: 22px 32px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 600; font-size: 1.2rem; font-family: 'Cormorant Garamond', serif; color: var(--dark-charcoal); }
-    .accordion-header:hover { background: var(--soft-gray); }
+    .accordion-item { background: var(--card-bg); border-radius: 20px; margin-bottom: 16px; border: 1px solid var(--card-border); overflow: hidden; }
+    .accordion-header { background: var(--card-bg); padding: 22px 32px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 600; font-size: 1.2rem; font-family: 'Cormorant Garamond', serif; color: white; }
+    .accordion-header:hover { background: #222222; }
     .accordion-header i { color: var(--gold); transition: transform 0.3s; }
-    .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.5s ease-out; background: #FEFCF9; border-top: 1px solid rgba(200, 168, 107, 0.1); }
+    .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.5s ease-out; background: #151515; border-top: 1px solid var(--card-border); }
     .accordion-content-inner { padding: 28px 32px; }
     .accordion-item.active .accordion-content { max-height: 800px; }
     .accordion-item.active .accordion-header i { transform: rotate(180deg); }
     .topic-list-module { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 12px; list-style: none; }
-    .topic-list-module li { padding: 8px 0 8px 28px; position: relative; }
+    .topic-list-module li { padding: 8px 0 8px 28px; position: relative; color: var(--text-light); }
     .topic-list-module li i { position: absolute; left: 0; top: 11px; color: var(--gold); }
-    .week-title { font-weight: 700; font-size: 1rem; margin: 20px 0 10px 0; color: var(--dark-charcoal); border-left: 3px solid var(--gold); padding-left: 12px; }
+    .week-title { font-weight: 700; font-size: 1rem; margin: 20px 0 10px 0; color: var(--gold); border-left: 3px solid var(--gold); padding-left: 12px; }
 
     /* Price Box */
-    .price-big { background: linear-gradient(135deg, #FEFAF3, #FFFCF8); border-radius: 32px; padding: 32px 40px; border: 1px solid rgba(200, 168, 107, 0.4); text-align: center; min-width: 280px; }
+    .price-big { background: var(--card-bg); border-radius: 32px; padding: 32px 40px; border: 1px solid var(--card-border); text-align: center; min-width: 280px; }
     .price-number { font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 700; color: var(--discount-red); }
     .promo-badge { background: var(--discount-red); color: white; display: inline-block; padding: 6px 20px; border-radius: 40px; font-size: 0.8rem; font-weight: 600; margin-top: 12px; }
-    .urgent-badge { background: var(--urgent-orange); color: white; padding: 10px 16px; border-radius: 50px; font-size: 0.75rem; font-weight: 600; display: inline-block; margin-top: 12px; }
+    .urgent-badge { background: var(--urgent-orange); color: #0A0A0A; padding: 10px 16px; border-radius: 50px; font-size: 0.75rem; font-weight: 700; display: inline-block; margin-top: 12px; }
 
     /* Payment Options */
     .payment-options { display: flex; flex-wrap: wrap; gap: 30px; margin-top: 40px; justify-content: center; }
-    .payment-option-card { background: white; border-radius: 28px; padding: 28px; flex: 1; min-width: 280px; text-align: center; border: 1px solid rgba(200, 168, 107, 0.3); transition: all 0.3s; }
-    .payment-option-card:hover { transform: translateY(-5px); border-color: var(--gold); box-shadow: 0 15px 30px -10px rgba(0,0,0,0.1); }
+    .payment-option-card { background: var(--card-bg); border-radius: 28px; padding: 28px; flex: 1; min-width: 280px; text-align: center; border: 1px solid var(--card-border); transition: all 0.3s; }
+    .payment-option-card:hover { transform: translateY(-5px); border-color: var(--gold); }
     .payment-option-card i { font-size: 2.5rem; color: var(--gold); margin-bottom: 15px; }
     .discount-badge-card { background: var(--discount-red); color: white; font-size: 0.7rem; padding: 4px 12px; border-radius: 30px; display: inline-block; margin-bottom: 10px; }
 
     /* Bank Card */
-    .bank-card { background: var(--soft-gray); border-radius: 32px; padding: 40px; border: 1px solid rgba(200, 168, 107, 0.3); max-width: 700px; margin: 0 auto; }
-    .bank-detail { background: white; border-radius: 20px; padding: 20px 28px; margin: 20px 0; border: 1px solid rgba(200, 168, 107, 0.2); }
-    .copy-btn { background: var(--gold); border: none; padding: 6px 18px; border-radius: 40px; font-size: 0.7rem; cursor: pointer; margin-left: 12px; transition: all 0.2s; }
-    .copy-btn:hover { background: var(--gold-dark); color: white; }
+    .bank-card { background: var(--card-bg); border-radius: 32px; padding: 40px; border: 1px solid var(--card-border); max-width: 700px; margin: 0 auto; }
+    .bank-detail { background: #151515; border-radius: 20px; padding: 20px 28px; margin: 20px 0; border: 1px solid var(--card-border); }
+    .bank-detail p { margin: 8px 0; font-family: monospace; font-size: 1rem; color: var(--text-light); }
+    .copy-btn { background: var(--gold); border: none; padding: 6px 18px; border-radius: 40px; font-size: 0.7rem; cursor: pointer; margin-left: 12px; transition: all 0.2s; color: #0A0A0A; font-weight: 600; }
+    .copy-btn:hover { background: var(--gold-light); }
 
-    .stat-card { background: white; border: 1px solid rgba(200,168,107,0.2); border-radius: 28px; padding: 32px 28px; text-align: center; flex: 1; min-width: 150px; }
+    .stat-card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 28px; padding: 32px 28px; text-align: center; flex: 1; min-width: 150px; }
     .stat-number { font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 700; color: var(--gold); }
 
-    footer { background: #141210; color: #E8DFD3; padding: 60px 0 40px; border-top: 2px solid rgba(200, 168, 107, 0.3); }
+    footer { background: #050505; color: var(--text-muted); padding: 60px 0 40px; border-top: 1px solid var(--card-border); }
 
     @media (max-width: 900px) {
       .container { padding: 0 28px; }
@@ -210,32 +212,32 @@
     }
     .flex-between { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 30px; }
     .grid-2col { display: flex; flex-wrap: wrap; gap: 40px; }
-    .contact-item a { text-decoration: none; color: var(--text-dark); }
+    .contact-item a { text-decoration: none; color: var(--text-light); }
     .contact-item a:hover { color: var(--gold); }
-    .start-date { background: rgba(200, 168, 107, 0.15); padding: 10px 24px; border-radius: 50px; display: inline-block; font-weight: 500; }
-    .info-box { background: rgba(200, 168, 107, 0.1); border-radius: 50px; padding: 12px 24px; display: inline-flex; align-items: center; gap: 12px; margin-top: 15px; }
-    .btn-gold-large { background: var(--gold); color: #1E1B18; padding: 14px 40px; border-radius: 60px; font-weight: 700; text-decoration: none; display: inline-block; transition: all 0.3s; font-size: 1rem; border: none; cursor: pointer; }
-    .btn-gold-large:hover { background: var(--gold-dark); transform: translateY(-2px); }
+    .start-date { background: rgba(212, 162, 89, 0.1); padding: 10px 24px; border-radius: 50px; display: inline-block; font-weight: 500; border: 1px solid rgba(212,162,89,0.2); }
+    .info-box { background: rgba(212, 162, 89, 0.1); border-radius: 50px; padding: 12px 24px; display: inline-flex; align-items: center; gap: 12px; margin-top: 15px; border: 1px solid rgba(212,162,89,0.2); }
+    .btn-gold-large { background: var(--gold); color: #0A0A0A; padding: 14px 40px; border-radius: 60px; font-weight: 700; text-decoration: none; display: inline-block; transition: all 0.3s; font-size: 1rem; border: none; cursor: pointer; }
+    .btn-gold-large:hover { background: var(--gold-light); transform: translateY(-2px); }
   </style>
 </head>
 <body>
 
-<!-- HERO BANNER - CERVEZA ARTESANAL -->
+<!-- HERO BANNER - BOTELLA DE CERVEZA ARTESANAL -->
 <div class="hero-banner">
   <div class="hero-banner-content">
-    <span class="hero-badge-gold"><i class="fas fa-beer"></i>  ACADEMIA CERVEcera · DESDE 2019</span>
+    <span class="hero-badge-gold"><i class="fas fa-beer"></i>  ACADEMIA CERVEcERA · DESDE 2019</span>
     <h1>Diplomado en Ciencia<br>y Tecnología Cervecera</h1>
     <p class="subhead">Domina la química, microbiología y procesos de elaboración de la cerveza artesanal con un enfoque científico y práctico. Formación impartida por el reconocido consultor José Guerrero.</p>
     <div class="price-card-hero">
       <div>
-        <div class="price-label">Precio regular</div>
+        <div class="price-label" style="color: var(--text-muted);">Precio regular</div>
         <div><span class="price-original">$8,500 MXN</span> <span class="price-amount">Desde $500 MXN</span></div>
         <div class="discount-badge" style="margin-top: 5px;">🔥 Promoción de lanzamiento</div>
       </div>
       <div>
         <a href="#pago-paypal" class="btn-outline-light"><i class="fab fa-paypal"></i> Inscribirme ahora</a>
       </div>
-      <div style="font-size:0.7rem; color:#e6d5b3;">*Certificado incluido · Acceso vitalicio a clases</div>
+      <div style="font-size:0.7rem; color: var(--text-muted);">*Certificado incluido · Acceso vitalicio</div>
     </div>
   </div>
 </div>
@@ -244,7 +246,7 @@
 <div class="timer-section">
   <div class="container text-center">
     <div class="urgent-text"><i class="fas fa-hourglass-half"></i><span>⚠️ OFERTA POR TIEMPO LIMITADO ⚠️</span><i class="fas fa-exclamation-triangle"></i></div>
-    <div class="timer-label" style="color: var(--gold-light); letter-spacing: 2px;">La promoción de lanzamiento termina en:</div>
+    <div class="timer-label" style="color: var(--text-muted); letter-spacing: 2px;">La promoción de lanzamiento termina en:</div>
     <div id="countdown" class="countdown">
       <div class="countdown-item"><div id="days" class="countdown-number">00</div><div class="countdown-label">Días</div></div>
       <div class="countdown-item"><div id="hours" class="countdown-number">00</div><div class="countdown-label">Horas</div></div>
@@ -252,7 +254,7 @@
       <div class="countdown-item"><div id="seconds" class="countdown-number">00</div><div class="countdown-label">Segundos</div></div>
     </div>
     <div id="expired-message" style="display: none;" class="timer-expired"><i class="fas fa-clock"></i> La oferta ha terminado · Precio regular $8,500 MXN</div>
-    <p style="color: rgba(255,255,245,0.8); margin-top: 20px; font-size: 0.9rem;"><i class="fas fa-gift gold-text"></i> <strong>¡Última oportunidad!</strong> Aprovecha los precios especiales para asistentes al webinar.</p>
+    <p style="color: var(--text-muted); margin-top: 20px; font-size: 0.9rem;"><i class="fas fa-gift gold-text"></i> <strong>¡Última oportunidad!</strong> Aprovecha los precios especiales.</p>
   </div>
 </div>
 
@@ -271,24 +273,24 @@
         <div class="author-card">
           <img src="https://i.postimg.cc/Gt0rQP3C/Whats-App-Image-2026-03-28-at-11-58-58-AM.jpg" alt="José Guerrero - Químico y Consultor Cervecero" class="author-photo">
           <div>
-            <p style="font-weight: 700; font-size: 1.6rem; color: var(--dark-charcoal); margin-bottom: 8px;">José Guerrero Garfias</p>
-            <div style="display: flex; flex-wrap: wrap; gap: 12px; font-size: 0.9rem; color: var(--text-medium); margin-bottom: 12px;">
+            <p style="font-weight: 700; font-size: 1.6rem; color: white; margin-bottom: 8px;">José Guerrero Garfias</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 12px; font-size: 0.9rem; color: var(--text-muted); margin-bottom: 12px;">
               <span><i class="fas fa-atom gold-text"></i> Químico de profesión</span>
-              <span><i class="fas fa-champagne-glasses gold-text"></i> Consultor vinícola & cervecero</span>
+              <span><i class="fas fa-champagne-glasses gold-text"></i> Consultor cervecero</span>
               <span><i class="fas fa-users gold-text"></i> +1500 profesionales capacitados</span>
             </div>
-            <div class="stats-badge" style="background: var(--soft-gray); padding: 8px 18px; border-radius: 40px; display: inline-block;">🏅 6 años de experiencia formando enólogos y maestros cerveceros en Latinoamérica</div>
-            <p style="margin-top: 16px; color: var(--text-medium); font-size: 0.9rem;"><i class="fas fa-quote-left gold-text"></i> La cerveza artesanal es un universo de ciencia y creatividad. He guiado a más de 1500 estudiantes para que dominen cada etapa del proceso, desde la selección de maltas hasta el control de calidad.</p>
+            <div class="stats-badge" style="background: #1A1A1A; padding: 8px 18px; border-radius: 40px; display: inline-block; color: var(--text-muted);">🏅 6 años formando maestros cerveceros en Latinoamérica</div>
+            <p style="margin-top: 16px; color: var(--text-muted); font-size: 0.9rem;"><i class="fas fa-quote-left gold-text"></i> La cerveza artesanal es un universo de ciencia y creatividad. He guiado a más de 1500 estudiantes para que dominen cada etapa del proceso, desde la selección de maltas hasta el control de calidad.</p>
           </div>
         </div>
       </div>
       <div style="flex: 1;">
         <div class="contact-card">
           <i class="fas fa-headset" style="font-size: 2rem; color: var(--gold); margin-bottom: 15px;"></i>
-          <h3 style="margin-bottom: 20px;">¿Tienes preguntas?</h3>
+          <h3 style="margin-bottom: 20px; color: white;">¿Tienes preguntas?</h3>
           <div class="contact-item" style="margin-bottom: 20px;"><a href="https://wa.me/5214921344124?text=Hola%20José,%20me%20interesa%20el%20Diplomado%20en%20Ciencia%20y%20Tecnología%20Cervecera" target="_blank" class="btn-wa-gold"><i class="fab fa-whatsapp"></i> +52 492 134 4124</a></div>
           <div class="contact-item"><i class="far fa-envelope" style="color: var(--gold); margin-right: 12px;"></i><a href="mailto:jmggarfias@gmail.com">jmggarfias@gmail.com</a></div>
-          <div style="margin-top: 20px; font-size: 0.85rem; color: var(--text-medium);"><i class="fas fa-clock gold-text"></i> Respuesta en menos de 24 horas</div>
+          <div style="margin-top: 20px; font-size: 0.85rem; color: var(--text-muted);"><i class="fas fa-clock gold-text"></i> Respuesta en menos de 24 horas</div>
         </div>
       </div>
     </div>
@@ -342,11 +344,11 @@
         <div class="start-date" style="margin-top: 20px;"><i class="fas fa-calendar-check gold-text"></i> <strong>Próxima generación: 1 de mayo de 2026</strong> · Cupos limitados</div>
       </div>
       <div class="price-big">
-        <span style="font-size: 0.8rem; letter-spacing: 2px;">INVERSIÓN TOTAL</span>
-        <div><span class="price-original-big" style="font-size: 1rem; text-decoration: line-through;">$8,500 MXN</span> <span class="price-number" style="font-size: 2rem;">Precios especiales</span></div>
+        <span style="font-size: 0.8rem; letter-spacing: 2px; color: var(--text-muted);">INVERSIÓN TOTAL</span>
+        <div><span class="price-original-big" style="font-size: 1rem; text-decoration: line-through; color: var(--text-muted);">$8,500 MXN</span> <span class="price-number" style="font-size: 2rem;">Precios especiales</span></div>
         <div class="promo-badge">🔥 Promoción para asistentes al webinar</div>
         <div class="urgent-badge">⏰ Precio válido por tiempo limitado</div>
-        <div style="font-size: 0.7rem; margin-top: 12px;">*Certificado digital · Acceso vitalicio a materiales</div>
+        <div style="font-size: 0.7rem; margin-top: 12px; color: var(--text-muted);">*Certificado digital · Acceso vitalicio a materiales</div>
         <a href="#pago-paypal" class="btn-gold-large" style="margin-top: 20px; display: inline-block;">Ver planes de pago</a>
       </div>
     </div>
@@ -363,9 +365,9 @@
       <div class="payment-option-card">
         <div class="discount-badge-card">🔥 AHORRA $3,500</div>
         <i class="fas fa-tag"></i>
-        <h3>Pago de Contado<br>(Promoción Webinar)</h3>
+        <h3 style="color: white;">Pago de Contado<br>(Promoción Webinar)</h3>
         <p style="font-size: 2rem; font-weight: 700; color: var(--discount-red); margin: 15px 0;">$5,000 MXN</p>
-        <p><span style="text-decoration: line-through; color: #999;">$8,500 MXN</span> → <strong class="gold-text">$5,000 MXN</strong></p>
+        <p><span style="text-decoration: line-through; color: #666;">$8,500 MXN</span> → <strong class="gold-text">$5,000 MXN</strong></p>
         <p>✅ Ahorro de $3,500 MXN (41% de descuento)</p>
         <p>✅ Acceso inmediato</p>
         <p>✅ Certificado digital incluido</p>
@@ -374,9 +376,9 @@
       <div class="payment-option-card">
         <div class="discount-badge-card">📅 SIN INTERESES</div>
         <i class="fas fa-calendar-alt"></i>
-        <h3>Pago Mensual</h3>
+        <h3 style="color: white;">Pago Mensual</h3>
         <p style="font-size: 2rem; font-weight: 700; color: var(--gold-dark); margin: 15px 0;">$900 MXN</p>
-        <p><span style="text-decoration: line-through; color: #999;">$1,417 MXN</span> → <strong class="gold-text">$900 MXN</strong></p>
+        <p><span style="text-decoration: line-through; color: #666;">$1,417 MXN</span> → <strong class="gold-text">$900 MXN</strong></p>
         <p>✅ Ahorro de $517 MXN por mes (36% de descuento)</p>
         <p>📅 6 mensualidades fijas</p>
         <p>🎓 Incluye certificado al finalizar</p>
@@ -385,16 +387,16 @@
       <div class="payment-option-card">
         <div class="discount-badge-card">📅 SIN INTERESES</div>
         <i class="fas fa-calendar-week"></i>
-        <h3>Pago Quincenal</h3>
+        <h3 style="color: white;">Pago Quincenal</h3>
         <p style="font-size: 2rem; font-weight: 700; color: var(--gold-dark); margin: 15px 0;">$500 MXN</p>
-        <p><span style="text-decoration: line-through; color: #999;">$708 MXN</span> → <strong class="gold-text">$500 MXN</strong></p>
+        <p><span style="text-decoration: line-through; color: #666;">$708 MXN</span> → <strong class="gold-text">$500 MXN</strong></p>
         <p>✅ Ahorro de $208 MXN por quincena (29% de descuento)</p>
         <p>📅 12 pagos quincenales</p>
         <p>🎓 Incluye certificado al finalizar</p>
         <a href="#" class="btn-gold-large" style="margin-top: 20px; display: inline-block; padding: 10px 30px;">Suscribirme</a>
       </div>
     </div>
-    <p class="text-center" style="margin-top: 30px; font-size: 0.85rem;"><i class="fas fa-info-circle gold-text"></i> Los precios promocionales son exclusivos para asistentes al webinar de lanzamiento.</p>
+    <p class="text-center" style="margin-top: 30px; font-size: 0.85rem; color: var(--text-muted);"><i class="fas fa-info-circle gold-text"></i> Los precios promocionales son exclusivos para asistentes al webinar de lanzamiento.</p>
   </div>
 </div>
 
@@ -404,7 +406,7 @@
     <div class="section-subtitle">Plan de estudios</div>
     <div class="section-title">Descubre todo lo que aprenderás</div>
     <div class="divider-gold"></div>
-    <p class="text-center" style="max-width: 700px; margin: 0 auto 40px;">Haz clic en cada módulo para desplegar el contenido completo</p>
+    <p class="text-center" style="max-width: 700px; margin: 0 auto 40px; color: var(--text-muted);">Haz clic en cada módulo para desplegar el contenido completo</p>
     <div class="accordion">
       <div class="accordion-item"><div class="accordion-header"><span>📅 MÓDULO I – Fundamentos Científicos de la Cerveza</span><i class="fas fa-chevron-down"></i></div><div class="accordion-content"><div class="accordion-content-inner"><div class="week-title">🔬 Semana 1 – Introducción a la Ciencia Cervecera</div><ul class="topic-list-module"><li>Historia y evolución de la cerveza artesanal</li><li>Composición química de la cebada y el lúpulo</li><li>Fisiología de la malteación</li></ul><div class="week-title">🍺 Semana 2 – Química del Mosto</div><ul class="topic-list-module"><li>Azúcares fermentables y no fermentables</li><li>pH, acidez y dureza del agua</li><li>Compuestos fenólicos y amargor del lúpulo</li></ul><div class="week-title">🦠 Semana 3 – Microbiología Cervecera</div><ul class="topic-list-module"><li>Levaduras: Saccharomyces cerevisiae y pastorianus</li><li>Bacterias contaminantes y control microbiológico</li><li>Fermentaciones altas y bajas</li></ul></div></div></div>
       <div class="accordion-item"><div class="accordion-header"><span>🍺 MÓDULO II – Proceso de Elaboración</span><i class="fas fa-chevron-down"></i></div><div class="accordion-content"><div class="accordion-content-inner"><div class="week-title">⚙️ Semana 4 – Maceración y Lavado</div><ul class="topic-list-module"><li>Tipos de maceración (infusión, decocción)</li><li>Control de temperaturas y enzimas</li><li>Lavado de granos y eficiencia</li></ul><div class="week-title">🌿 Semana 5 – Cocción y Lupulado</div><ul class="topic-list-module"><li>Adiciones de lúpulo (amargor, sabor, aroma)</li><li>Clarificación y coagulación de proteínas</li><li>Enfriamiento y oxigenación</li></ul><div class="week-title">🧪 Semana 6 – Fermentación</div><ul class="topic-list-module"><li>Cinética fermentativa · Control de temperatura</li><li>Fermentación primaria y secundaria</li><li>Dry hopping y maduraciones</li></ul></div></div></div>
@@ -436,32 +438,32 @@
 </div>
 
 <!-- PAYPAL -->
-<div id="pago-paypal" class="payment-section" style="background: linear-gradient(135deg, #FEFAF5, #FDF9F2); padding: 80px 0; text-align: center;">
+<div id="pago-paypal" class="payment-section" style="background: linear-gradient(135deg, #0A0A0A, #111111); padding: 80px 0; text-align: center;">
   <div class="container">
     <div class="section-subtitle">Asegura tu lugar</div>
     <h2 class="section-title" style="margin-bottom: 20px;">Pago con PayPal</h2>
-    <p style="max-width: 550px; margin: 0 auto 25px;">Elige la opción que mejor se adapte a ti. Cupos limitados, reserva ahora.</p>
+    <p style="max-width: 550px; margin: 0 auto 25px; color: var(--text-muted);">Elige la opción que mejor se adapte a ti. Cupos limitados, reserva ahora.</p>
     <div class="payment-options" style="margin-bottom: 20px;">
-      <div class="payment-option-card"><i class="fab fa-paypal"></i><h3>Pago de Contado</h3><p style="font-size: 2rem; font-weight: 700;">$5,000 MXN</p><a href="#" target="_blank" class="btn-gold-large" style="padding: 12px 32px;">Pagar ahora</a></div>
-      <div class="payment-option-card"><i class="fab fa-paypal"></i><h3>Pago Mensual</h3><p style="font-size: 2rem; font-weight: 700;">$900 MXN/mes</p><a href="#" target="_blank" class="btn-gold-large" style="padding: 12px 32px;">Suscribirme</a></div>
-      <div class="payment-option-card"><i class="fab fa-paypal"></i><h3>Pago Quincenal</h3><p style="font-size: 2rem; font-weight: 700;">$500 MXN</p><a href="#" target="_blank" class="btn-gold-large" style="padding: 12px 32px;">Suscribirme</a></div>
+      <div class="payment-option-card"><i class="fab fa-paypal"></i><h3 style="color: white;">Pago de Contado</h3><p style="font-size: 2rem; font-weight: 700; color: var(--discount-red);">$5,000 MXN</p><a href="#" target="_blank" class="btn-gold-large" style="padding: 12px 32px;">Pagar ahora</a></div>
+      <div class="payment-option-card"><i class="fab fa-paypal"></i><h3 style="color: white;">Pago Mensual</h3><p style="font-size: 2rem; font-weight: 700; color: var(--gold-dark);">$900 MXN/mes</p><a href="#" target="_blank" class="btn-gold-large" style="padding: 12px 32px;">Suscribirme</a></div>
+      <div class="payment-option-card"><i class="fab fa-paypal"></i><h3 style="color: white;">Pago Quincenal</h3><p style="font-size: 2rem; font-weight: 700; color: var(--gold-dark);">$500 MXN</p><a href="#" target="_blank" class="btn-gold-large" style="padding: 12px 32px;">Suscribirme</a></div>
     </div>
-    <p style="font-size: 0.8rem; color: var(--text-medium);"><i class="fas fa-lock gold-text"></i> Pago 100% seguro · Recibirás confirmación y acceso al aula virtual</p>
-    <p style="margin-top: 15px; font-size: 0.8rem;"><i class="fas fa-info-circle gold-text"></i> Para pagos quincenales, selecciona la suscripción correspondiente.</p>
+    <p style="font-size: 0.8rem; color: var(--text-muted);"><i class="fas fa-lock gold-text"></i> Pago 100% seguro · Recibirás confirmación y acceso al aula virtual</p>
+    <p style="margin-top: 15px; font-size: 0.8rem; color: var(--text-muted);"><i class="fas fa-info-circle gold-text"></i> Para pagos quincenales, selecciona la suscripción correspondiente.</p>
   </div>
 </div>
 
 <!-- TRANSFERENCIA -->
-<div class="transfer-section" style="background: white; padding: 70px 0;">
+<div class="transfer-section" style="background: var(--dark-bg); padding: 70px 0;">
   <div class="container">
     <div class="section-subtitle">Otra forma de pago</div>
     <h2 class="section-title">Transferencia o Depósito Bancario</h2>
     <div class="divider-gold"></div>
-    <p class="text-center" style="margin-bottom: 40px;">Realiza tu pago y envía tu comprobante por WhatsApp para confirmar tu inscripción.</p>
+    <p class="text-center" style="margin-bottom: 40px; color: var(--text-muted);">Realiza tu pago y envía tu comprobante por WhatsApp para confirmar tu inscripción.</p>
     <div class="bank-card">
       <div class="bank-detail"><p><strong><i class="fas fa-credit-card gold-text"></i> Depósito / Tarjeta:</strong></p><p style="font-size: 1.3rem; font-weight: 700; color: var(--gold-dark);">4152 3145 9813 3463</p><button class="copy-btn" onclick="copyToClipboard('4152314598133463')">Copiar</button></div>
       <div class="bank-detail"><p><strong><i class="fas fa-exchange-alt gold-text"></i> CLABE Interbancaria:</strong></p><p style="font-size: 1.2rem; font-weight: 500;">012 074 01558665643 7</p><p>BBVA México · José Guerrero Garfias</p><button class="copy-btn" onclick="copyToClipboard('012074015586656437')">Copiar CLABE</button></div>
-      <div style="background: rgba(200,168,107,0.1); border-radius: 20px; padding: 20px; text-align: center; margin-top: 10px;"><i class="fas fa-phone-alt gold-text"></i><p>Envía tu comprobante por WhatsApp al <strong>+52 492 134 4124</strong> con tu nombre completo y correo, indicando el plan de pago elegido.</p></div>
+      <div style="background: #151515; border-radius: 20px; padding: 20px; text-align: center; margin-top: 10px; border: 1px solid var(--card-border);"><i class="fas fa-phone-alt gold-text"></i><p>Envía tu comprobante por WhatsApp al <strong>+52 492 134 4124</strong> con tu nombre completo y correo, indicando el plan de pago elegido.</p></div>
     </div>
   </div>
 </div>
@@ -473,8 +475,8 @@
       <div><h3 style="font-family: 'Cormorant Garamond'; font-size: 1.8rem;"><i class="fas fa-beer gold-text"></i> Academia Cervecera</h3><p>José Guerrero Garfias · Químico, Consultor Cervecero</p><p style="font-size: 0.8rem;">Desde 2019 formando profesionales en la industria cervecera</p></div>
       <div style="display: flex; gap: 30px; align-items: center;"><a href="https://wa.me/5214921344124" style="color: #E8DFD3; text-decoration: none;"><i class="fab fa-whatsapp"></i> WhatsApp</a><a href="mailto:jmggarfias@gmail.com" style="color: #E8DFD3; text-decoration: none;"><i class="far fa-envelope"></i> Email</a></div>
     </div>
-    <hr style="margin: 40px 0 25px; border-color: rgba(200,168,107,0.2);">
-    <div style="font-size: 0.7rem; text-align: center;">© 2026 Academia Cervecera · Clases enviadas a tu email · Inicio: 1 de mayo 2026 · Oferta válida hasta el 15 de abril 2026</div>
+    <hr style="margin: 40px 0 25px; border-color: var(--card-border);">
+    <div style="font-size: 0.7rem; text-align: center; color: var(--text-muted);">© 2026 Academia Cervecera · Clases enviadas a tu email · Inicio: 1 de mayo 2026 · Oferta válida hasta el 15 de abril 2026</div>
   </div>
 </footer>
 
