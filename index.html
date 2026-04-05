@@ -25,6 +25,28 @@
     .gold-text { color: var(--gold); }
     .text-center { text-align: center; }
     
+    /* Floating Timer - Sentido de Urgencia */
+    .floating-timer {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: linear-gradient(135deg, #1E1B18 0%, #2A2520 100%);
+      backdrop-filter: blur(12px);
+      border-radius: 60px;
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      border: 1px solid var(--urgent-orange);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+      z-index: 1000;
+      font-family: 'Inter', sans-serif;
+    }
+    .floating-timer i { color: var(--urgent-orange); font-size: 1.2rem; }
+    .floating-timer .timer-text { font-size: 0.75rem; color: #E8DFD3; letter-spacing: 1px; }
+    .floating-timer .timer-numbers { font-weight: 700; font-size: 1rem; color: var(--gold); background: rgba(0,0,0,0.5); padding: 4px 10px; border-radius: 40px; }
+    @media (max-width: 768px) { .floating-timer { padding: 8px 16px; gap: 8px; } .floating-timer .timer-text { display: none; } }
+    
     /* Hero Banner */
     .hero-banner {
       position: relative;
@@ -149,9 +171,10 @@
 
     /* Payment Options */
     .payment-options { display: flex; flex-wrap: wrap; gap: 30px; margin-top: 40px; justify-content: center; }
-    .payment-option-card { background: white; border-radius: 28px; padding: 28px; flex: 1; min-width: 260px; text-align: center; border: 1px solid rgba(200, 168, 107, 0.3); transition: all 0.3s; }
+    .payment-option-card { background: white; border-radius: 28px; padding: 28px; flex: 1; min-width: 280px; text-align: center; border: 1px solid rgba(200, 168, 107, 0.3); transition: all 0.3s; }
     .payment-option-card:hover { transform: translateY(-5px); border-color: var(--gold); box-shadow: 0 15px 30px -10px rgba(0,0,0,0.1); }
     .payment-option-card i { font-size: 2.5rem; color: var(--gold); margin-bottom: 15px; }
+    .discount-badge-card { background: var(--discount-red); color: white; font-size: 0.7rem; padding: 4px 12px; border-radius: 30px; display: inline-block; margin-bottom: 10px; }
 
     /* Bank Card */
     .bank-card { background: var(--soft-gray); border-radius: 32px; padding: 40px; border: 1px solid rgba(200, 168, 107, 0.3); max-width: 700px; margin: 0 auto; }
@@ -206,7 +229,7 @@
   </div>
 </div>
 
-<!-- TIMER - URGENCIA -->
+<!-- TIMER PRINCIPAL - NUEVA FECHA 15 DE ABRIL -->
 <div class="timer-section">
   <div class="container text-center">
     <div class="urgent-text"><i class="fas fa-hourglass-half"></i><span>⚠️ OFERTA POR TIEMPO LIMITADO ⚠️</span><i class="fas fa-exclamation-triangle"></i></div>
@@ -220,6 +243,13 @@
     <div id="expired-message" style="display: none;" class="timer-expired"><i class="fas fa-clock"></i> La oferta ha terminado · Precio regular $8,500 MXN</div>
     <p style="color: rgba(255,255,245,0.8); margin-top: 20px; font-size: 0.9rem;"><i class="fas fa-gift gold-text"></i> <strong>¡Última oportunidad!</strong> Aprovecha los precios especiales para asistentes al webinar.</p>
   </div>
+</div>
+
+<!-- CONTADOR FLOTANTE DE URGENCIA -->
+<div id="floatingTimer" class="floating-timer">
+  <i class="fas fa-clock"></i>
+  <span class="timer-text">Oferta termina en:</span>
+  <span id="floatingCountdown" class="timer-numbers">-- : -- : --</span>
 </div>
 
 <!-- PERFIL + CONTACTO -->
@@ -297,7 +327,7 @@
   </div>
 </div>
 
-<!-- PLANES DE PAGO DESTACADOS -->
+<!-- PLANES DE PAGO CON DESCUENTOS DESTACADOS -->
 <div class="section-light">
   <div class="container">
     <div class="section-subtitle">Planes de pago</div>
@@ -305,29 +335,35 @@
     <div class="divider-gold"></div>
     <div class="payment-options" style="margin-top: 20px;">
       <div class="payment-option-card">
+        <div class="discount-badge-card">🔥 AHORRA $3,500</div>
         <i class="fas fa-tag"></i>
         <h3>Pago de Contado<br>(Promoción Webinar)</h3>
         <p style="font-size: 2rem; font-weight: 700; color: var(--discount-red); margin: 15px 0;">$5,000 MXN</p>
-        <p>✅ Ahorro de $3,500 MXN</p>
+        <p><span style="text-decoration: line-through; color: #999;">$8,500 MXN</span> → <strong class="gold-text">$5,000 MXN</strong></p>
+        <p>✅ Ahorro de $3,500 MXN (41% de descuento)</p>
         <p>✅ Acceso inmediato</p>
         <p>✅ Certificado digital incluido</p>
         <a href="#" class="btn-gold-large" style="margin-top: 20px; display: inline-block; padding: 10px 30px;">Pagar ahora</a>
       </div>
       <div class="payment-option-card">
+        <div class="discount-badge-card">📅 SIN INTERESES</div>
         <i class="fas fa-calendar-alt"></i>
         <h3>Pago Mensual</h3>
         <p style="font-size: 2rem; font-weight: 700; color: var(--gold-dark); margin: 15px 0;">$900 MXN</p>
+        <p><span style="text-decoration: line-through; color: #999;">$1,417 MXN</span> → <strong class="gold-text">$900 MXN</strong></p>
+        <p>✅ Ahorro de $517 MXN por mes (36% de descuento)</p>
         <p>📅 6 mensualidades fijas</p>
-        <p>💰 Sin intereses</p>
         <p>🎓 Incluye certificado al finalizar</p>
         <a href="#" class="btn-gold-large" style="margin-top: 20px; display: inline-block; padding: 10px 30px;">Suscribirme</a>
       </div>
       <div class="payment-option-card">
+        <div class="discount-badge-card">📅 SIN INTERESES</div>
         <i class="fas fa-calendar-week"></i>
         <h3>Pago Quincenal</h3>
         <p style="font-size: 2rem; font-weight: 700; color: var(--gold-dark); margin: 15px 0;">$500 MXN</p>
+        <p><span style="text-decoration: line-through; color: #999;">$708 MXN</span> → <strong class="gold-text">$500 MXN</strong></p>
+        <p>✅ Ahorro de $208 MXN por quincena (29% de descuento)</p>
         <p>📅 12 pagos quincenales</p>
-        <p>💰 Sin intereses</p>
         <p>🎓 Incluye certificado al finalizar</p>
         <a href="#" class="btn-gold-large" style="margin-top: 20px; display: inline-block; padding: 10px 30px;">Suscribirme</a>
       </div>
@@ -401,28 +437,54 @@
       <div style="display: flex; gap: 30px; align-items: center;"><a href="https://wa.me/5214921344124" style="color: #E8DFD3; text-decoration: none;"><i class="fab fa-whatsapp"></i> WhatsApp</a><a href="mailto:jmggarfias@gmail.com" style="color: #E8DFD3; text-decoration: none;"><i class="far fa-envelope"></i> Email</a></div>
     </div>
     <hr style="margin: 40px 0 25px; border-color: rgba(200,168,107,0.2);">
-    <div style="font-size: 0.7rem; text-align: center;">© 2026 Academia del Vino & Cerveza · Clases enviadas a tu email · Inicio: 1 de mayo 2026 · Oferta válida hasta el 31 de marzo 2026</div>
+    <div style="font-size: 0.7rem; text-align: center;">© 2026 Academia del Vino & Cerveza · Clases enviadas a tu email · Inicio: 1 de mayo 2026 · Oferta válida hasta el 15 de abril 2026</div>
   </div>
 </footer>
 
 <script>
-  // Countdown Timer
-  function updateCountdown() {
-    const targetDate = new Date(2026, 2, 31, 23, 59, 59);
+  // FECHA OBJETIVO: 15 de abril de 2026 a las 23:59:59
+  function getTargetDate() {
+    return new Date(2026, 3, 15, 23, 59, 59); // Abril es 3 (0-index)
+  }
+
+  // Actualizar ambos contadores
+  function updateCountdowns() {
+    const targetDate = getTargetDate();
     const now = new Date();
     const diff = targetDate - now;
+
+    const countdownElement = document.getElementById('countdown');
+    const expiredMessage = document.getElementById('expired-message');
+    const floatingElement = document.getElementById('floatingCountdown');
+
     if (diff <= 0) {
-      document.getElementById('countdown').style.display = 'none';
-      document.getElementById('expired-message').style.display = 'inline-block';
+      if (countdownElement) countdownElement.style.display = 'none';
+      if (expiredMessage) expiredMessage.style.display = 'inline-block';
+      if (floatingElement) floatingElement.textContent = 'OFERTA TERMINADA';
       return;
     }
-    document.getElementById('days').textContent = String(Math.floor(diff / (1000*60*60*24))).padStart(2,'0');
-    document.getElementById('hours').textContent = String(Math.floor((diff % (1000*60*60*24)) / (1000*60*60))).padStart(2,'0');
-    document.getElementById('minutes').textContent = String(Math.floor((diff % (1000*60*60)) / (1000*60))).padStart(2,'0');
-    document.getElementById('seconds').textContent = String(Math.floor((diff % (1000*60)) / 1000)).padStart(2,'0');
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+    // Actualizar contador principal
+    document.getElementById('days').textContent = String(days).padStart(2, '0');
+    document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+    document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+    document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+
+    // Actualizar contador flotante (formato HH:MM:SS)
+    if (floatingElement) {
+      const totalHours = days * 24 + hours;
+      floatingElement.textContent = `${String(totalHours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+    }
   }
-  updateCountdown();
-  setInterval(updateCountdown, 1000);
+
+  // Inicializar y ejecutar cada segundo
+  updateCountdowns();
+  setInterval(updateCountdowns, 1000);
 
   // Accordion
   document.querySelectorAll('.accordion-header').forEach(header => {
