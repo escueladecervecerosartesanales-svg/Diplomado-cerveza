@@ -469,9 +469,10 @@
 </footer>
 
 <script>
-  // FECHA OBJETIVO: 29 de Mayo de 2026 a las 23:59:59
+  // FECHA OBJETIVO: 30 de Julio de 2026 a las 23:00 hrs (Hora CDMX)
   function getTargetDate() {
-    return new Date(2026, 4, 29, 23, 59, 59);
+    // Se usa formato ISO 8601 con la zona horaria de CDMX (-06:00)
+    return new Date('2026-07-30T23:00:00-06:00');
   }
 
   function updateCountdowns() {
